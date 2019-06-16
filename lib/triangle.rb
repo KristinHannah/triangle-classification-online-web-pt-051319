@@ -7,6 +7,7 @@ class Triangle
     @length1 = length1
     @length2 = length2
     @length3 = length3
+    @lengths = [length1, length2, length3]
   end 
   
   def valid?
