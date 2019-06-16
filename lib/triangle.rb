@@ -17,7 +17,7 @@ class Triangle
   def valid?
     greaterthan = self.lengths.min > 0
 
-    siderule = self.length1 + self.length2 < self.length3 && self.length1 + self.length3 < self.length2 && self.length2 + self.length3 < self.length1
+    siderule = self.length1 + self.length2 > self.length3 && self.length1 + self.length3 > self.length2 && self.length2 + self.length3 > self.length1
      
      greaterthan && siderule
   end 
