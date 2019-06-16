@@ -24,6 +24,7 @@ class Triangle
   
   
   def kind 
+    binding.pry
     if self.valid? 
        if self.lengths.uniq.length == 1 #self.length1 == self.length2 && self.length2 == self.length3
          :equilateral
