@@ -1,3 +1,56 @@
+require "pry"
+
 class Triangle
-  # write code here
+  attr_accessor :length1, :length2, :length3
+  
+  def initialize(length1, length2, length3)
+    @length1 = length1
+    @length2 = length2
+    @length3 = length3
+  end 
+  
+  def valid?
+    greaterthan = self.length1 > 0 || self.length2 > 0 || self.length3 > 0 
+
+    siderule = self.length1 + self.length2 < self.length3 || self.length1 + self.length3 < self.length2 || self.length2 + self.length3 < self.length1
+     
+     greaterthan && siderule
+  end 
+  
+  
+  def kind 
+    if self.valid? 
+       if self.length1 == self.length2 && self.length2 == self.length3
+         :equilateral
+       elsif self.length1 == self.length2  || self.length2 == self.length3 || self.length1 == self.length3 
+         :isosceles
+       else 
+        :scalene 
+       end 
+     else 
+       "invalid"
+     end 
+  end 
+ 
+ class TriangleError < Standard Error 
+
+  end 
+  
 end
+  
+  def get_married(person)
+    self.partner = person
+    if person.class != Person
+      begin
+        raise PartnerError
+      rescue PartnerError => error
+          puts error.message
+      end
+    else
+      person.partner = self
+    end
+end
+ #  scalene = no equal side 
+  # isoceles = two equal side 
+  # equilateral = all equal 
+  # each length must be > 0, and length 1 + 2 > 3, 
