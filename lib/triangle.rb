@@ -49,8 +49,3 @@ end
   # else
   #    person.partner = self
   #  end
-end
- #  scalene = no equal side 
-  # isoceles = two equal side 
-  # equilateral = all equal 
-  # each length must be > 0, and length 1 + 2 > 3, 
