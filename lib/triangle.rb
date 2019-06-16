@@ -34,7 +34,8 @@ class Triangle
         :scalene 
        end 
      else 
-       "invalid"
+       raise TriangleError
+       resuce TriangleError
      end 
   end 
  
