@@ -35,7 +35,8 @@ class Triangle
        end 
      else 
        raise TriangleError
-       resuce TriangleError
+       resuce TriangleError => error 
+        puts error.message
      end 
   end 
  
