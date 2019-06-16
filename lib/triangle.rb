@@ -10,6 +10,10 @@ class Triangle
     @lengths = [length1, length2, length3]
   end 
   
+  def lengths 
+    @lengths 
+  end 
+  
   def valid?
     greaterthan = self.length1 > 0 || self.length2 > 0 || self.length3 > 0 
 
@@ -21,9 +25,9 @@ class Triangle
   
   def kind 
     if self.valid? 
-       if self.length1 == self.length2 && self.length2 == self.length3
+       if self.lengths.uniq.length == 1 #self.length1 == self.length2 && self.length2 == self.length3
          :equilateral
-       elsif self.length1 == self.length2  || self.length2 == self.length3 || self.length1 == self.length3 
+       elsif self.lengths.uniq.length == 2 #self.length1 == self.length2  || self.length2 == self.length3 || self.length1 == self.length3 
          :isosceles
        else 
         :scalene 
